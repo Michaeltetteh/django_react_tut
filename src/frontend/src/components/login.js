@@ -19,12 +19,18 @@ class Login extends Component{
             const response = axiosInstance.post('/token/obtain/',{
                 username: this.state.username,
                 password: this.state.password
-            });
-            console.log(response.access);
-            axiosInstance.defaults.headers['Authorization'] = "JWT " + response.data.access;
-            localStorage.setItem('access_token', response.data.access);
-            localStorage.setItem('refresh_token', response.data.refresh);
-            return data;
+            }).then(response => {
+                console.log(response);
+                console.log(response.data);
+
+                axiosInstance.defaults.headers['Authorization'] = "JWT " + response.data.access;
+                localStorage.setItem('access_token', response.data.access);
+                localStorage.setItem('refresh_token', response.data.refresh);
+
+                console.log(localStorage);
+            })
+
+            return response.data;
         } catch (error) {
             throw error;
         }
