@@ -30,7 +30,7 @@ class Login extends Component{
                 console.log(localStorage);
             })
 
-            return response.data;
+            // return response.data;
         } catch (error) {
             throw error;
         }

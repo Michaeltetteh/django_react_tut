@@ -25,4 +25,4 @@ class CustomUserCreate(APIView):
 
 class HelloWorldView(APIView):
     def get(self, request):
-        return Response(data={"hello":"world"}, status=status.HTTP_200_OK)
+        return Response(data={"hello":"Hello world"}, status=status.HTTP_200_OK)
