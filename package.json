@@ -1,0 +1,24 @@
+{
+  "name": "django_react_tut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michaeltetteh/django_react_tut.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michaeltetteh/django_react_tut/issues"
+  },
+  "homepage": "https://github.com/Michaeltetteh/django_react_tut#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0"
+  }
+}
