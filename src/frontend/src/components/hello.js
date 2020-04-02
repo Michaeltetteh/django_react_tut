@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import axiosInstance from "../axiosApi";
+import 'babel-polyfill';
 
 class Hello extends Component {
     constructor(props){
@@ -11,21 +12,35 @@ class Hello extends Component {
         this.getMessage = this.getMessage.bind(this);
     }
 
-    getMessage(){
-        try {
-            const header = localStorage.getItem("access_token");
-            console.log(header);
-            let response = axiosInstance.get('/hello/')
-            .then(response => {
-                const message = response.data.hello;
-                this.setState({
-                    message: message,
-                });
-            })
+    // getMessage(){
+    //     try {
+    //         const header = localStorage.getItem("access_token");
+    //         console.log(header);
+    //         let response = axiosInstance.get('/hello/')
+    //         .then(response => {
+    //             const message = response.data.hello;
+    //             this.setState({
+    //                 message: message,
+    //             });
+    //         })
 
-            return response.message;
-        } catch(error) {
-            console.log("Error: ",JSON.stringify(error, null, 4));
+    //         return response.message;
+    //     } catch(error) {
+    //         console.log("Error: ",JSON.stringify(error, null, 4));
+    //         throw error;
+    //     }
+    // }
+
+    async getMessage() {
+        try {
+            let response = await axiosInstance.get('/hello/');
+            const message = response.data.hello;
+            this.setState({
+                message: message,
+            });
+            return message;
+        } catch (error) {
+            console.log("Error: ", JSON.stringify(error, null, 4));
             throw error;
         }
     }

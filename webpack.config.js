@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
     mode: "development",
+    entry: ['babel-polyfill', path.resolve(__dirname, 'src/frontend/src/index.js')], 
     entry: path.resolve(__dirname,'src/frontend/src/index.js'),
     output: {
         path: path.resolve(__dirname, "src/frontend/static/frontend/public/"),

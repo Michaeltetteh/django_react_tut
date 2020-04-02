@@ -9,7 +9,8 @@ from .serializers import MyTokenObtainPairSerializer,CustomUserSerializer
 class ObtainTokenPairWithColorView(TokenObtainPairView):
     # permission_classes = (permissions.AllowAny,)
     serializer_class = MyTokenObtainPairSerializer
-
+    authentication_classes = ()
+    
 class CustomUserCreate(APIView):
     permission_classes = (permissions.AllowAny,)
 

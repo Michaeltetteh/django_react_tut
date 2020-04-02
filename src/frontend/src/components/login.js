@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import axiosInstance from "../axiosApi";
+// import 'babel-polyfill';
 
 class Login extends Component{
     constructor(props){
