@@ -30,11 +30,27 @@ class Login extends Component{
                 console.log(localStorage);
             })
 
-            // return response.data;
+            return response.data;
         } catch (error) {
             throw error;
         }
     }
+
+    // async handleSubmit(event) {
+    //     event.preventDefault();
+    //     try {
+    //         const data = await axiosInstance.post('/token/obtain/', {
+    //             username: this.state.username,
+    //             password: this.state.password
+    //         });
+    //         axiosInstance.defaults.headers['Authorization'] = "JWT " + data.access;
+    //         localStorage.setItem('access_token', data.access);
+    //         localStorage.setItem('refresh_token', data.refresh);
+    //         return data;
+    //     } catch (error) {
+    //         throw error;
+    //     }
+    // }
 
     render(){
         return (

@@ -15,15 +15,15 @@ class Hello extends Component {
         try {
             const header = localStorage.getItem("access_token");
             console.log(header);
-            // let response = axiosInstance.get('/hello/')
-            // .then(response => {
-            //     const message = response.data.hello;
-            //     this.setState({
-            //         message: message,
-            //     });
-            // })
+            let response = axiosInstance.get('/hello/')
+            .then(response => {
+                const message = response.data.hello;
+                this.setState({
+                    message: message,
+                });
+            })
 
-            // return response.message;
+            return response.message;
         } catch(error) {
             console.log("Error: ",JSON.stringify(error, null, 4));
             throw error;

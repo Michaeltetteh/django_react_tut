@@ -108,6 +108,7 @@ venv2/
 django_backend/node_modules/*
 ./node_modules/
 node_modules/
+/node_modules
 /node_modules/
 node_modules
 
